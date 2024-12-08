@@ -1,7 +1,8 @@
 <template>
   <div class="flex flex-col">
-    <main>
-      <top-menu />
+    <top-menu />
+    <main class="flex flex-row">
+      <side-menu />
       <router-view />
     </main>
 
@@ -10,6 +11,7 @@
 
 <script setup lang="ts">
 import TopMenu from '@/modules/common/components/TopMenu.vue';
+import SideMenu from '../components/SideMenu.vue';
 
 
 </script>
