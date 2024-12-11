@@ -1,5 +1,8 @@
 <template>
-  <button @click="$emit('click')" :class="['btn btn-circle btn-secondary p-1 fixed', position]">
+  <button
+    @click="$emit('click')"
+    :class="['btn btn-circle btn-secondary p-1 fixed', position]"
+  >
     <slot />
   </button>
 </template>
@@ -10,27 +13,26 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  position: 'bottom-right'
+  position: 'bottom-right',
 });
 
-defineEmits(['click'])
-
+defineEmits(['click']);
 </script>
 
 <style scoped>
 .top-left {
-  @apply top-10 left-10
+  @apply top-10 left-10;
 }
 
 .top-right {
-  @apply top-10 right-10
+  @apply top-10 right-10;
 }
 
 .bottom-left {
-  @apply bottom-10 left-10
+  @apply bottom-10 left-10;
 }
 
 .bottom-right {
-  @apply bottom-10 right-10
+  @apply bottom-10 right-10;
 }
 </style>

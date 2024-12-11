@@ -19,16 +19,15 @@
         </tr>
       </tbody>
     </table>
-
-
-
   </div>
 
   <input-modal
-  title="Nuevo proyecto"
+    title="Nuevo proyecto"
     subtitle="Dale un nombre único a tu proyecto"
     placeholder="Ingrese el nombre del proyecto"
-    :open="modalOpen" @close="modalOpen = false" @value="onNewValue"
+    :open="modalOpen"
+    @close="modalOpen = false"
+    @value="onNewValue"
   />
 
   <CustomModal :open="customModalOpen">
@@ -41,8 +40,18 @@
 
     <template #footer>
       <div class="flex justify-end">
-        <button @click="customModalOpen=false" class="btn mr-4">Close</button>
-        <button @click="customModalOpen=false" class="btn btn-primary">Aceptar</button>
+        <button
+          @click="customModalOpen = false"
+          class="btn mr-4"
+        >
+          Close
+        </button>
+        <button
+          @click="customModalOpen = false"
+          class="btn btn-primary"
+        >
+          Aceptar
+        </button>
       </div>
     </template>
   </CustomModal>
@@ -51,7 +60,10 @@
     <AddCircle />
   </fab-button>
 
-  <fab-button @click="customModalOpen = true" position="bottom-left">
+  <fab-button
+    @click="customModalOpen = true"
+    position="bottom-left"
+  >
     <ModalIcon />
   </fab-button>
 </template>
@@ -68,6 +80,6 @@ const modalOpen = ref(false);
 const customModalOpen = ref(false);
 
 const onNewValue = (projectName: string) => {
-  console.log({ projectName })
-}
+  console.log({ projectName });
+};
 </script>

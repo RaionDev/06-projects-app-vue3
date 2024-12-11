@@ -4,6 +4,8 @@ import pluginVitest from '@vitest/eslint-plugin';
 import skipFormatting from '@vue/eslint-config-prettier';
 
 export default [
+  ...pluginVue.configs['flat/essential'],
+  ...vueTsEslintConfig(),
   {
     name: 'app/files-to-lint',
     files: ['**/*.{ts,mts,tsx,vue}'],

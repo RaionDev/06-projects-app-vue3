@@ -10,13 +10,12 @@
       </div>
 
       <div class="border-t border-t-blue-500 pt-2">
-        <slot  name="footer" />
+        <slot name="footer" />
       </div>
     </div>
   </dialog>
 
-  <div v-if="open" class="modal-backdrop fixed top-0 left-0 z-10 bg-black opacity-50 w-screen h-screen">
-  </div>
+  <div v-if="open" class="modal-backdrop fixed top-0 left-0 z-10 bg-black opacity-50 w-screen h-screen"></div>
 </template>
 
 <script setup lang="ts">
