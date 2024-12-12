@@ -1,40 +1,20 @@
 <template>
-  <dialog
-    class="modal"
-    :open="open"
-  >
+  <dialog class="modal" :open="open">
     <div class="modal-box">
       <h3 class="text-lg font-bold">{{ title }}</h3>
-      <p
-        v-if="subtitle"
-        class="py-4"
-      >
+      <p v-if="subtitle" class="py-4">
         {{ subtitle }}
       </p>
-      <div class="modal-action flex flex-col">
-        <form
-          method="dialog"
-          @submit.prevent="submitValue"
-        >
-          <input
-            :placeholder="placeholder ?? 'Ingrese un valor'"
-            ref="inputRef"
-            class="input input-bordered input-primary w-full flex-1"
-            v-model="inputValue"
-            type="text"
-          />
+      <div class="flex flex-col modal-action">
+        <form method="dialog" @submit.prevent="submitValue">
+          <input :placeholder="placeholder ?? 'Ingrese un valor'" ref="inputRef"
+            class="flex-1 w-full input input-bordered input-primary" v-model="inputValue" type="text" />
           <!-- if there is a button in form, it will close the modal -->
           <div class="flex justify-end mt-5">
-            <button
-              @click="$emit('close')"
-              class="btn mr-4"
-            >
+            <button @click="$emit('close')" class="mr-4 btn">
               Close
             </button>
-            <button
-              type="submit"
-              class="btn btn-primary"
-            >
+            <button type="submit" class="btn btn-primary">
               Aceptar
             </button>
           </div>
@@ -43,10 +23,7 @@
     </div>
   </dialog>
 
-  <div
-    v-if="open"
-    class="modal-backdrop fixed top-0 left-0 z-10 bg-black opacity-50 w-screen h-screen"
-  ></div>
+  <div v-if="open" class="fixed top-0 left-0 z-10 w-screen h-screen bg-black opacity-50 modal-backdrop"></div>
 </template>
 
 <script setup lang="ts">
